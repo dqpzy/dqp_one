@@ -14,6 +14,8 @@ import orz.dqp.pojo.TbItem;
 import orz.dqp.pojo.TbItemExample;
 import orz.dqp.service.TbItemService;
 import orz.dqp.utils.EasyUIDateGridResult;
+import orz.dqp.utils.FjnyResult;
+import orz.dqp.utils.IDUtils;
 
 @Service
 public class TbItemServiceImpl implements TbItemService {
@@ -34,6 +36,17 @@ public class TbItemServiceImpl implements TbItemService {
 		EasyUIDateGridResult easyUIDateGridResult = new EasyUIDateGridResult(total, list);
 		return easyUIDateGridResult;
 
+	}
+
+	@Override
+	public FjnyResult saveTbItem(TbItem tbItem) {
+		long getItemId = IDUtils.getItemId();
+		tbItem.setId(getItemId);
+		int insertSelective = tbItemMapper.insertSelective(tbItem);
+		if(insertSelective<0) {
+			return FjnyResult.build(500, "添加商品失败");
+		}
+		return FjnyResult.ok(tbItem);
 	}
 
 }
