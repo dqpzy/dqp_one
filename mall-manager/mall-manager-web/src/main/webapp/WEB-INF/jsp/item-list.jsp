@@ -109,7 +109,7 @@
 				sortable : true
 			}, {
 				field : 'updated',
-				title :' 更新时间t'
+				title :' 更新时间',
 				width : 100,
 				align : 'center'
 			} ] ]
