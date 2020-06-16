@@ -45,25 +45,73 @@
 			height : 400,
 			columns : [ [ {
 				field : 'id',
-				title : 'id',
+				title : '商品id',
 				width : 100,
+				align : 'center',
 				sortable : true
 			}, {
 				field : 'title',
-				title : '标题',
-				width : 100,
+				title : '商品标题',
+				width : 200,
+				align : 'center',
 				sortable : true
 			}, {
+				field : 'sell_point',
+				title : '商品卖点',
+				width : 100,
+				align : 'center',
+				sortable : true
+			},{
 				field : 'price',
-				title : '价格',
+				title : '商品价格',
 				width : 100,
-				align : 'right',
+				align : 'center',
+				sortable : true
+				formatter:TT.formatPrice
+			},{
+				field : 'num',
+				title : '库存数量',
+				width : 100,
+				align : 'center',
+				sortable : true
+			},{
+				field : 'barcode',
+				title : '商品条形码',
+				width : 100,
+				align : 'center',
+				sortable : true
+			},{
+				field : 'image',
+				title : '商品图片',
+				width : 100,
+				align : 'center',
+				formatter:function(value,row){
+					return "<img src = "+value+ "width='100px' heigth= '100px'>"
+				}
+				
+			},{
+				field : 'cid',
+				title : '所属类目',
+				width : 100,
+				align : 'center',
+				sortable : true
+			},{
+				field : 'status',
+				title : '商品状态',
+				width : 100,
+				align : 'center',
+				sortable : true
+			},{
+				field : 'created',
+				title : '创建时间',
+				width : 100,
+				align : 'center',
 				sortable : true
 			}, {
-				field : 'image',
-				title : '图片',
+				field : 'updated',
+				title :' 更新时间t'
 				width : 100,
-				align : 'right'
+				align : 'center'
 			} ] ]
 		});
 	</script>
